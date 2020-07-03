@@ -609,7 +609,7 @@ enableEmoji = true
         owner = "JellyZhang"
         repo = "blog-comment"
         clientId = "0b4ffaaeb1d715868b1a"
-        clientSecret = "b2857e713dbed5b5cc5c42fcff53616370f243ca"
+        clientSecret = "939ca742bfe18d34247c76fae5bc70a0b00eac98"
       # Valine comment config (https://github.com/xCss/Valine)
       # Valine 评论系统设置 (https://github.com/xCss/Valine)
     [params.page.library]
