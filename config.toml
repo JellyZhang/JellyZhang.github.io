@@ -351,7 +351,7 @@ enableEmoji = true
           # 是否显示社交账号
           social = true
           # 免责声明 (支持 HTML 格式)
-          disclaimer = "sadasdda"
+          disclaimer = "持续性混吃等死"
         # 主页文章列表
         [languages.zh-cn.params.home.posts]
           enable = false
@@ -361,6 +361,7 @@ enableEmoji = true
       [languages.zh-cn.params.social]
         GitHub = "JellyZhang"
         #Linkedin = ""
+        leetcode = "zhangjelly0405"
         #Facebook = ""
         #Zhihu = "xxxx"
         #Bilibili = "xxxx"
@@ -421,7 +422,7 @@ enableEmoji = true
     enable = true
     # Custom content (HTML format is supported)
     # 自定义内容 (支持 HTML 格式)
-    custom = 'sadasd'
+    custom = 'Made with Sugar, Spice, and Everything nice'
     # whether to show Hugo and theme info
     # 是否显示 Hugo 和主题信息
     hugo = false
@@ -570,7 +571,7 @@ enableEmoji = true
       Whatsapp = false
       Pinterest = false
       Tumblr = false
-      HackerNews = true
+      HackerNews = false
       Reddit = false
       VK = false
       Buffer = false
