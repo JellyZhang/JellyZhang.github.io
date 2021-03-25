@@ -13,6 +13,8 @@ themesDir = "./themes"
 # 网站标题
 title = "Jelly's Blog"
 
+publishDir = "docs"
+
 # whether to use robots.txt
 # 是否使用 robots.txt
 enableRobotsTXT = true
