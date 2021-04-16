@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/Users/jelly/workspace/jellyblog",
+	"sourceRoot": "/home/runner/work/jellyblog/jellyblog",
 	"sources": [
 		"assets/css/style.scss",
 		"assets/css/_variables.scss",
