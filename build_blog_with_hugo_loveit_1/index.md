@@ -1,4 +1,4 @@
-# 使用Hugo+LoveIt主题+github Pages搭建博客
+# 使用Hugo+LoveIt主题+Github Pages搭建博客（1）本地运行
 
 
 ## 本地安装Hugo
