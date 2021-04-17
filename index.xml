@@ -2,7 +2,7 @@
     <channel>
         <title>Jelly&#39;s Blog</title>
         <link>https://jellyzhang.github.io/</link>
-        <description>Jelly&#39;s Blog</description>
+        <description>Jelly&#39;s Blog. Jelly的个人博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>zhangjelly0405@gmail.com (Jelly)</managingEditor>
             <webMaster>zhangjelly0405@gmail.com (Jelly)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 Apr 2021 00:39:04 &#43;0800</lastBuildDate>
             <atom:link href="https://jellyzhang.github.io/index.xml" rel="self" type="application/rss+xml" />
