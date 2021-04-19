@@ -1,37 +1,108 @@
 # 使用Hugo+LoveIt主题+Github Pages搭建博客（1）本地运行
 
 
-## 本地安装Hugo
+## 安装Hugo
+
+可参考[Hugo官方的Quick Start](https://gohugo.io/getting-started/quick-start/)
 
 ### 安装二进制（Mac）
 
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=oceanic-next&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=15px&ph=21px&ln=false&fl=1&fm=Source+Code+Pro&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%2523%2520%25E4%25BD%25BF%25E7%2594%25A8brew%25E5%25AE%2589%25E8%25A3%2585hugo%250Abrew%2520install%2520hugo%250A%250A%2523%2520%25E5%2588%259B%25E5%25BB%25BA%25E6%2596%25B0%25E9%25A1%25B9%25E7%259B%25AE%25EF%25BC%2588%25E7%25BD%2591%25E7%25AB%2599%25EF%25BC%2589%250Ahugo%2520new%2520site%2520my_website%250A%250A%2523%2520%25E7%2594%259F%25E6%2588%2590%25E7%2594%25A8%25E4%25BA%258E%25E5%258F%2591%25E5%25B8%2583%25E7%259A%2584%25E9%259D%2599%25E6%2580%2581%25E6%2596%2587%25E4%25BB%25B6%25EF%25BC%2588%25E4%25B8%258D%25E5%258C%2585%25E5%2590%25AB%25E8%258D%2589%25E7%25A8%25BF%25EF%25BC%2589%250Ahugo%250A%250A%2523%2520%25E7%2594%259F%25E6%2588%2590%25E7%2594%25A8%25E4%25BA%258E%25E5%258F%2591%25E5%25B8%2583%25E7%259A%2584%25E9%259D%2599%25E6%2580%2581%25E6%2596%2587%25E4%25BB%25B6%25EF%25BC%2588%25E5%258C%2585%25E6%258B%25AC%25E8%258D%2589%25E7%25A8%25BF%25EF%25BC%2589%250Ahugo%2520-D%250A%250A%2523%2520%25E6%259C%25AC%25E5%259C%25B0%25E8%25BF%2590%25E8%25A1%258C%25E7%25BD%2591%25E7%25AB%2599%250Ahugo%2520server"
-  style="width: 349px; height: 356px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
+```bash
+# 使用brew安装hugo
+brew install hugo
 
+# 创建新项目（网站）
+hugo new site my_website
 
+# 生成用于发布的静态文件（不包含草稿）
+hugo
+
+# 生成用于发布的静态文件（包括草稿）
+hugo -D
+
+# 本地运行网站
+hugo server
+```
 
 
 
 ### 直接使用Docker
 
+```bash
+# 创建新项目（网站）
+docker run --rm -it \
+  -v $(pwd):/src \
+  klakegg/hugo \
+  new site my_website
 
+# 生成用于发布的静态文件（不包含草稿）
+docker run --rm -it \
+  -v $(pwd):/src \
+  klakegg/hugo
 
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=oceanic-next&wt=none&l=application%2Fx-sh&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=15px&ph=21px&ln=false&fl=1&fm=Source+Code+Pro&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%2523%2520%25E7%2594%259F%25E6%2588%2590%25E7%2594%25A8%25E4%25BA%258E%25E5%258F%2591%25E5%25B8%2583%25E7%259A%2584%25E9%259D%2599%25E6%2580%2581%25E6%2596%2587%25E4%25BB%25B6%25EF%25BC%2588%25E4%25B8%258D%25E5%258C%2585%25E5%2590%25AB%25E8%258D%2589%25E7%25A8%25BF%25EF%25BC%2589%250Adocker%2520run%2520--rm%2520-it%2520%255C%250A%2520%2520-v%2520%2524%28pwd%29%253A%252Fsrc%2520%255C%250A%2520%2520klakegg%252Fhugo%250A%250A%2523%2520%25E7%2594%259F%25E6%2588%2590%25E7%2594%25A8%25E4%25BA%258E%25E5%258F%2591%25E5%25B8%2583%25E7%259A%2584%25E9%259D%2599%25E6%2580%2581%25E6%2596%2587%25E4%25BB%25B6%25EF%25BC%2588%25E5%258C%2585%25E6%258B%25AC%25E8%258D%2589%25E7%25A8%25BF%25EF%25BC%2589%250Adocker%2520run%2520--rm%2520-it%2520%255C%250A%2520%2520-v%2520%2524%28pwd%29%253A%252Fsrc%2520%255C%250A%2520%2520klakegg%252Fhugo%2520-D%250A%2520%2520%250A%2523%2520%25E6%259C%25AC%25E5%259C%25B0%25E8%25BF%2590%25E8%25A1%258C%25E7%25BD%2591%25E7%25AB%2599%250Adocker%2520run%2520--rm%2520-it%2520%255C%250A%2520%2520-v%2520%2524%28pwd%29%253A%252Fsrc%2520%255C%250A%2520%2520-p%25201313%253A1313%2520%255C%250A%2520%2520klakegg%252Fhugo%2520%255C%250A%2520%2520server%250A%2520%2520"
-  style="width: 349px; height: 410px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
+# 生成用于发布的静态文件（包括草稿）
+docker run --rm -it \
+  -v $(pwd):/src \
+  klakegg/hugo -D
+  
+# 本地运行网站
+docker run --rm -it \
+  -v $(pwd):/src \
+  -p 1313:1313 \
+  klakegg/hugo \
+  server
+  
+```
 
+{{< admonition type=notice title="可以在镜像后面增加版本号，指定使用的hugo版本" open=true >}}
 
+```bash
+# 比如
+docker run --rm -it \
+  -v $(pwd):/src \
+  klakegg/hugo:0.82.0
+```
 
-### 新项目文件树结构
-
-
+{{< /admonition >}}
 
 ## 安装LoveIt主题
+
+```bash
+# 位于你的博客项目根目录
+git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
+```
+
+代码克隆成功后在`./themes`文件夹下应出现`LoveIt`文件夹。
+
+{{< admonition type=quote open=true >}}
+
+详细可参考[LoveIt官方文档](https://hugoloveit.com/zh-cn/theme-documentation-basics/)
+
+{{< /admonition >}}
+
+## 项目文件树结构
+
+```bash
+.
+├── archetypes # markdown文章的模版
+├── config.toml # 配置文件
+├── content # 网站内容，主要保存文章
+├── data # 生成网站可用的数据文件，可用在模版中
+├── layouts # 生成网站时可用的模版
+├── public # 通过hugo命令生成的静态文件，主要发布这个
+├── resources # 通过hugo命令一起生成的资源文件，暂时不知道什么用
+├── static # 静态文件，比如文章中的图片/视频文件、缩略图等
+└── themes # 保存可用的hugo主题
+
+```
+
+通常，我们只会用到以下几个文件夹的东西
+
+- `config.toml` ：保存hugo的配置，包括主题的配置等。详细设置见下方 #网站配置
+- `content`：保存网站的各种内容，比如文章。
+- `archetypes`： 保存文章的markdown模版，通常包括文章的前缀注释，是一些在创建新文章时会被用到。
+- `static` ：保存文章中用到的静态文件，比如图片、网站缩略图等。
+- `public` ：通过`hugo`命令生成的静态html文件、css、js等。在服务器上发布时主要发布这个文件夹。
 
 
 
@@ -41,5 +112,8 @@
 
 ## 配置缩略图
 
+
+
+## 开始写第一篇文章
 
 

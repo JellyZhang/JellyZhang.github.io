@@ -12,6 +12,6 @@
     <guid>https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98-github-pages%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A21%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8C/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg" referrerpolicy="no-referrer">
-            </div>本地安装Hugo 安装二进制（Mac） 直接使用Docker 新项目文件树结构 安装LoveIt主题 配置网站设置 配置缩略图]]></description>
+            </div>安装Hugo 可参考Hugo官方的Quick Start 安装二进制（Mac） # 使用brew安装hugo brew install hugo # 创建新项目（网站） hugo new site my_website # 生成用于发布的]]></description>
 </item></channel>
 </rss>
