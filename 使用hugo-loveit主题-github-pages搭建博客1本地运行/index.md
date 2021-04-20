@@ -108,12 +108,26 @@ git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
 
 ## 配置网站设置
 
+配置文件位置：`./config.toml`
 
+{{< admonition type=quote open=true >}}
+
+具体的配置条目参考[LoveIt官方文档](https://hugoloveit.com/zh-cn/theme-documentation-basics/#site-configuration)
+
+{{< /admonition >}}
 
 ## 配置缩略图
 
+1. 使用的网站：https://realfavicongenerator.net/ 获取缩略图的各种格式
 
+   {{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png" caption="下载到的全部内容">}}
+
+2. 将整个压缩包的文件（包括图片之外的文件）放到`./static`下
 
 ## 开始写第一篇文章
 
+### 文章前缀注释
 
+###  本地调试
+
+### Chrome禁用缓存
