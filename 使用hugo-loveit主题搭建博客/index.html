@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>使用Hugo&#43;LoveIt主题搭建博客 - Jelly&#39;s Blog</title><meta name="Description" content="Jelly&#39;s Blog. Jelly的个人博客"><meta property="og:title" content="使用Hugo&#43;LoveIt主题搭建博客" />
+<meta property="og:description" content="安装 Hugo 可参考Hugo 官方的 Quick Start 安装二进制（Mac） # 使用brew安装hugo brew install hugo # 创建新项目（网站） hugo new site my_website # 生成用于发布的静态文件（不包" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><meta property="og:image" content="https://jellyzhang.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-16T00:39:04&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-16T00:39:04&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jellyzhang.github.io/logo.png"/>
+
+<meta name="twitter:title" content="使用Hugo&#43;LoveIt主题搭建博客"/>
+<meta name="twitter:description" content="安装 Hugo 可参考Hugo 官方的 Quick Start 安装二进制（Mac） # 使用brew安装hugo brew install hugo # 创建新项目（网站） hugo new site my_website # 生成用于发布的静态文件（不包"/>
+<meta name="application-name" content="Jelly&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Jelly&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><link rel="prev" href="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91-typora-%E5%9B%BE%E5%BA%8A/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用Hugo+LoveIt主题搭建博客",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jellyzhang.github.io\/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/"
+        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客, hugo","wordcount":  3914 ,
+        "url": "https:\/\/jellyzhang.github.io\/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2021-04-16T00:39:04+08:00","dateModified": "2021-04-16T00:39:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "jelly","logo": "https:\/\/jellyzhang.github.io\/images\/avatar.png"},"author": {
+                "@type": "Person",
+                "name": "Jelly"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Jelly&#39;s Blog">Jelly&#39;s blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 所有文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/categories/tech/"> 技术 </a><a class="menu-item" href="/categories/anime/"> 动漫 </a><a class="menu-item" href="/about"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Jelly&#39;s Blog">Jelly&#39;s blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">所有文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/categories/tech/" title="">技术</a><a class="menu-item" href="/categories/anime/" title="">动漫</a><a class="menu-item" href="/about" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">使用Hugo&#43;LoveIt主题搭建博客</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Jelly</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tech/"><i class="far fa-folder fa-fw"></i>tech</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3914 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg, https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg 1.5x, https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg"
+        title="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装-hugo">安装 Hugo</a>
+      <ul>
+        <li><a href="#安装二进制mac">安装二进制（Mac）</a></li>
+        <li><a href="#直接使用-docker">直接使用 Docker</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装-loveit-主题">安装 LoveIt 主题</a></li>
+    <li><a href="#项目文件树结构">项目文件树结构</a></li>
+    <li><a href="#配置网站设置">配置网站设置</a></li>
+    <li><a href="#配置缩略图">配置缩略图</a></li>
+    <li><a href="#开始写第一篇文章">开始写第一篇文章</a>
+      <ul>
+        <li><a href="#文章前缀参数">文章前缀参数</a></li>
+        <li><a href="#将文章前缀参数保存在-markdown-模版中">将文章前缀参数保存在 markdown 模版中</a></li>
+        <li><a href="#生成新文章">生成新文章</a></li>
+        <li><a href="#本地调试">本地调试</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建-github-仓库">创建 Github 仓库</a>
+      <ul>
+        <li><a href="#第一个仓库">第一个仓库</a>
+          <ul>
+            <li><a href="#链接本地仓库与远端仓库">链接本地仓库与远端仓库</a></li>
+            <li><a href="#创建gitignore">创建.gitignore</a></li>
+          </ul>
+        </li>
+        <li><a href="#第二个仓库">第二个仓库</a>
+          <ul>
+            <li><a href="#创建仓库注意名称">创建仓库，注意名称</a></li>
+            <li><a href="#在仓库设置里设置启用github-pages">在仓库设置里设置启用<code>Github Pages</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#给源代码仓库添加-github-action">给源代码仓库添加 Github Action</a>
+      <ul>
+        <li><a href="#创建-ci-脚本">创建 CI 脚本</a></li>
+        <li><a href="#设置-push-用的密钥">设置 Push 用的密钥</a></li>
+        <li><a href="#观察效果">观察效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置评论系统">配置评论系统</a>
+      <ul>
+        <li><a href="#gittalk">GitTalk</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考文献">参考文献</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="安装-hugo">安装 Hugo</h2>
+<p>可参考<a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener noreffer">Hugo 官方的 Quick Start</a></p>
+<h3 id="安装二进制mac">安装二进制（Mac）</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 使用brew安装hugo</span>
+brew install hugo
+
+<span class="c1"># 创建新项目（网站）</span>
+hugo new site my_website
+
+<span class="c1"># 生成用于发布的静态文件（不包含草稿）</span>
+hugo
+
+<span class="c1"># 生成用于发布的静态文件（包括草稿）</span>
+hugo -D
+
+<span class="c1"># 本地运行网站</span>
+hugo server
+</code></pre></div><h3 id="直接使用-docker">直接使用 Docker</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 创建新项目（网站）</span>
+docker run --rm -it <span class="se">\
+</span><span class="se"></span>  -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/src <span class="se">\
+</span><span class="se"></span>  klakegg/hugo <span class="se">\
+</span><span class="se"></span>  new site my_website
+
+<span class="c1"># 生成用于发布的静态文件（不包含草稿）</span>
+docker run --rm -it <span class="se">\
+</span><span class="se"></span>  -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/src <span class="se">\
+</span><span class="se"></span>  klakegg/hugo
+
+<span class="c1"># 生成用于发布的静态文件（包括草稿）</span>
+docker run --rm -it <span class="se">\
+</span><span class="se"></span>  -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/src <span class="se">\
+</span><span class="se"></span>  klakegg/hugo -D
+
+<span class="c1"># 本地运行网站</span>
+docker run --rm -it <span class="se">\
+</span><span class="se"></span>  -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/src <span class="se">\
+</span><span class="se"></span>  -p 1313:1313 <span class="se">\
+</span><span class="se"></span>  klakegg/hugo <span class="se">\
+</span><span class="se"></span>  server
+
+</code></pre></div><div class="details admonition notice open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>可以在镜像后面增加版本号，指定使用的hugo版本<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 比如</span>
+docker run --rm -it <span class="se">\
+</span><span class="se"></span>  -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/src <span class="se">\
+</span><span class="se"></span>  klakegg/hugo:0.82.0
+</code></pre></div></div>
+        </div>
+    </div>
+<h2 id="安装-loveit-主题">安装 LoveIt 主题</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 位于你的博客项目根目录</span>
+git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
+</code></pre></div><p>代码克隆成功后在<code>./themes</code>文件夹下应出现<code>LoveIt</code>文件夹。</p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">详细可参考<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/" target="_blank" rel="noopener noreffer">LoveIt 官方文档</a></div>
+        </div>
+    </div>
+<h2 id="项目文件树结构">项目文件树结构</h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">.
+├── archetypes <span class="c1"># markdown文章的模版</span>
+├── config.toml <span class="c1"># 配置文件</span>
+├── content <span class="c1"># 网站内容，主要保存文章</span>
+├── data <span class="c1"># 生成网站可用的数据文件，可用在模版中</span>
+├── layouts <span class="c1"># 生成网站时可用的模版</span>
+├── public <span class="c1"># 通过hugo命令生成的静态文件，主要发布这个</span>
+├── resources <span class="c1"># 通过hugo命令一起生成的资源文件，暂时不知道什么用</span>
+├── static <span class="c1"># 静态文件，比如文章中的图片/视频文件、缩略图等</span>
+└── themes <span class="c1"># 保存可用的hugo主题</span>
+
+</code></pre></div><p>通常，我们只会用到以下几个文件夹的东西</p>
+<ul>
+<li><code>config.toml</code> ：保存 hugo 的配置，包括主题的配置等。详细设置见下方 #网站配置</li>
+<li><code>content</code>：保存网站的各种内容，比如文章。</li>
+<li><code>archetypes</code>： 保存文章的 markdown 模版，通常包括文章的前缀注释，是一些在创建新文章时会被用到。</li>
+<li><code>static</code> ：保存文章中用到的静态文件，比如图片、网站缩略图等。</li>
+<li><code>public</code> ：通过<code>hugo</code>命令生成的静态 html 文件、css、js 等。在服务器上发布时主要发布这个文件夹。</li>
+</ul>
+<h2 id="配置网站设置">配置网站设置</h2>
+<p>配置文件位置：<code>./config.toml</code></p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">具体的配置条目参考<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#site-configuration" target="_blank" rel="noopener noreffer">LoveIt 官方文档</a></div>
+        </div>
+    </div>
+<h2 id="配置缩略图">配置缩略图</h2>
+<ol>
+<li>
+<p>使用的网站：https://realfavicongenerator.net/ 获取缩略图的各种格式</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png" data-sub-html="<h2>下载到的全部内容</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420215752393.png" />
+    </a><figcaption class="image-caption">下载到的全部内容</figcaption>
+    </figure>
+</li>
+<li>
+<p>将整个压缩包的文件（包括图片之外的文件）放到<code>./static</code>下</p>
+</li>
+<li>
+<p>重启浏览器，应该可以看到标签上的缩略图出现了。</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png" data-sub-html="<h2>浏览器标签出现缩略图</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420221206348.png" />
+    </a><figcaption class="image-caption">浏览器标签出现缩略图</figcaption>
+    </figure>
+</li>
+</ol>
+<div class="details admonition question">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>缩略图没生效？<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>缩略图未生效的原因可能是浏览器使用了之前的缓存。尝试：</p>
+<ol>
+<li>
+<p>彻底关闭并重启浏览器。</p>
+</li>
+<li>
+<p>通过<a href="https://www.download3k.com/articles/How-to-force-Chrome-refresh-regenerate-thumbnails-for-its-New-Tab-page-tiles-02115" target="_blank" rel="noopener noreffer">这个步骤</a>强制删除缓存。</p>
+</li>
+<li>
+<p>强制 Chrome 禁用网页缓存。</p>
+<ol>
+<li>
+<p>打开 Chrome 开发者工具。（网页空白处右键-检查，或者按 F12）</p>
+</li>
+<li>
+<p>在<code>Network</code>栏勾选<code>Disable cache</code>。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222054860.png"
+        data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222054860.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222054860.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222054860.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222054860.png"
+        title="image-20210420222054860" /></p>
+</li>
+<li>
+<p>或者在设置里找到<code>Preferences -&gt; Network -&gt; Disable cache</code></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222919647.png"
+        data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222919647.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222919647.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222919647.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420222919647.png"
+        title="image-20210420222919647" /></p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+        </div>
+    </div>
+<h2 id="开始写第一篇文章">开始写第一篇文章</h2>
+<h3 id="文章前缀参数">文章前缀参数</h3>
+<p>在每篇 markdown 文章最前面可以用一部分注释来告诉<code>LoveIt主题</code>，这篇文章的属性，譬如文章标签、分类、是否为草稿等。</p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>引用<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">详细可参考<a href="https://hugoloveit.com/zh-cn/theme-documentation-content/#front-matter" target="_blank" rel="noopener noreffer">LoveIt 官方文档</a></div>
+        </div>
+    </div>
+<h3 id="将文章前缀参数保存在-markdown-模版中">将文章前缀参数保存在 markdown 模版中</h3>
+<p>模版文件位置：<code>./archetypes/default.md</code></p>
+<div class="details admonition example">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>我使用的md模版<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">---
+title: &#34;{{ replace .TranslationBaseName &#34;-&#34; &#34; &#34; | title }}&#34;
+subtitle: &#34;&#34;
+date: {{ .Date }}
+draft: true
+
+tags: []
+categories: []
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+
+featuredImage: &#34;&#34;
+featuredImagePreview: &#34;&#34;
+
+license: &#39;<span class="p">&lt;</span><span class="nt">a</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;license external nofollow noopener noreffer&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>CC BY-NC 4.0<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>&#39;
+---
+</code></pre></div></div>
+        </div>
+    </div>
+<h3 id="生成新文章">生成新文章</h3>
+<p>生成新文章的命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo new posts/文章标题.md
+</code></pre></div><p>执行完成后，在<code>./content/posts</code>目录下应该可以看到新文件，同时里面已经有 markdown 模版中的文章前缀参数。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>技巧<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>
+<p>也可以手动复制旧文章来生成新文章，不通过命令。</p>
+</li>
+<li>
+<p>也可以在<code>content</code>文件夹下建新的文件夹，方便管理。这种情况下生成的静态 Html 文件路由效果如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">.
+└── content
+    └── about
+    |   └── index.md  // &lt;- https://example.com/about/
+    ├── posts
+    |   ├── firstpost.md   // &lt;- https://example.com/posts/firstpost/
+    |   ├── happy
+    |   |   └── ness.md  // &lt;- https://example.com/posts/happy/ness/
+    |   └── secondpost.md  // &lt;- https://example.com/posts/secondpost/
+    └── quote
+        ├── first.md       // &lt;- https://example.com/quote/first/
+        └── second.md      // &lt;- https://example.com/quote/second/
+</code></pre></div></li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="本地调试">本地调试</h3>
+<p>本地调试命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo server --disableFastRender
+</code></pre></div><figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png" data-sub-html="<h2>本地运行网站</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420225341256.png" />
+    </a><figcaption class="image-caption">本地运行网站</figcaption>
+    </figure>
+<p>出现成功的提示后在浏览器打开<code>http://localhost:1313</code>即可看到网站。</p>
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw"></i>Bug<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>如果你看到如图的编译错误，可能是因为你的文章除了前缀参数外没有任何内容。随便写几句话就可以解决这个问题。</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png" data-sub-html="<h2>有文章为空时的编译报错</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508202920.png" />
+    </a><figcaption class="image-caption">有文章为空时的编译报错</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<h2 id="创建-github-仓库">创建 Github 仓库</h2>
+<p>个人建议创建两个仓库：</p>
+<ul>
+<li>
+<p>一个用于托管博客项目源文件，包括配置文件等包含后续可能配置 <code>API KEY</code> 的东西。设置权限为 <em>Private（不公开）</em></p>
+</li>
+<li>
+<p>一个用于托管博客编译后生成的<code>静态 Html 文件</code>(即使用 hugo 命令编译生成的<code>public</code>文件夹)，并配置该仓库使用 <code>Github Pages</code>，然后 Github 就会自动检测到它其中的<code>静态Html文件</code>并搭建网站。设置权限为 Public（公开）</p>
+</li>
+</ul>
+<figure><img src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/Blank%20diagram.svg"/>
+</figure>
+
+<h3 id="第一个仓库">第一个仓库</h3>
+<p>按照常规方式创建仓库即可，反正设置为<em>private</em>权限等级，也没人看得见。
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png" data-sub-html="<h2>第一个仓库示例，保存博客源代码</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508205521.png" />
+    </a><figcaption class="image-caption">第一个仓库示例，保存博客源代码</figcaption>
+    </figure></p>
+<h4 id="链接本地仓库与远端仓库">链接本地仓库与远端仓库</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">## 位于博客源代码根目录</span>
+
+<span class="c1">## 初始化本地Git仓库</span>
+git init
+
+<span class="c1">## 设置名为Origin的远端Git仓库</span>
+git remote add origin <span class="o">{{</span>这里替换成你的仓库在Github Clone用的地址<span class="o">}}</span>
+
+<span class="c1">## 选择所有文件</span>
+git add -A
+
+<span class="c1">## Push到github</span>
+git push -u origin master
+
+</code></pre></div><h4 id="创建gitignore">创建.gitignore</h4>
+<p>在源代码项目中创建<code>.gitignore</code>文件，来防止把生成的静态文件上传。创建位置如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">.
+├── .git
+├── .github
+├── .gitignore  &lt;---- 在根目录下
+├── README.md
+├── archetypes
+├── config.toml
+├── content
+├── data
+├── layouts
+├── public
+├── resources
+├── static
+└── themes
+</code></pre></div><p>在<code>.gitignore</code>中写入<code>/public</code>，来防止 Git 将其上传。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat .gitignore
+
+<span class="c1">## 输出</span>
+/public
+</code></pre></div><h3 id="第二个仓库">第二个仓库</h3>
+<h4 id="创建仓库注意名称">创建仓库，注意名称</h4>
+<p>第二个仓库名字比较重要，必须是<code>{{你的github用户名}}.github.io</code>。
+比如我的 Github 名字为<code>JellyZhang</code>,那么我需要创建的仓库名称为<code>JellyZhang.github.io</code>，如图所示。
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png" data-sub-html="<h2>第二个仓库示例（注意仓库名称与自己用户名对应）</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508211226.png" />
+    </a><figcaption class="image-caption">第二个仓库示例（<code>注意仓库名称与自己用户名对应</code>）</figcaption>
+    </figure></p>
+<h4 id="在仓库设置里设置启用github-pages">在仓库设置里设置启用<code>Github Pages</code></h4>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png" data-sub-html="<h2>找到仓库设置</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212510.png" />
+    </a><figcaption class="image-caption">找到仓库设置</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png" data-sub-html="<h2>找到Pages一栏</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212601.png" />
+    </a><figcaption class="image-caption">找到<code>Pages</code>一栏</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png" data-sub-html="<h2>设置Branch与静态文件位置</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210508212746.png" />
+    </a><figcaption class="image-caption">设置<code>Branch</code>与静态文件位置</figcaption>
+    </figure>
+<p>这个地方设置<code>Branch</code>为<code>master</code>，静态文件位置为<code>/(root)</code>，原因是我们在下个步骤中会直接将生成的<code>public</code>文件夹中的内容<code>push</code>到<code>master</code>分支的<code>/</code>目录下。</p>
+<h2 id="给源代码仓库添加-github-action">给源代码仓库添加 Github Action</h2>
+<h3 id="创建-ci-脚本">创建 CI 脚本</h3>
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>什么是Github Action?<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Github Action 是 Github 提供的 CI 系统，可以让用户编写脚本，并在触发指定的操作后（比如新 commit push 到仓库），自动触发脚本。它可以：</p>
+<ul>
+<li>编译项目</li>
+<li>测试项目</li>
+<li>登陆远程服务器</li>
+<li>发布服务</li>
+<li>等等……</li>
+</ul>
+</div>
+        </div>
+    </div>
+<br/>
+<p>在源代码项目根目录下新建<code>.github/workflow/main.yml</code>。(通过 Github Action 网页端操作也可以)</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">.
+├── .git
+├── .github
+│   └── workflows
+│       └── main.yml  &lt;---在这里创建
+├── .gitignore
+├── README.md
+├── archetypes
+├── config.toml
+├── content
+├── data
+├── layouts
+├── public
+├── resources
+├── static
+└── themes
+</code></pre></div><br/>
+<p><code>main.yml</code>脚本内容：</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="c"># This is a basic workflow to help you get started with Actions</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">CI</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># Controls when the action will run.</span><span class="w">
+</span><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="c"># Triggers the workflow on push or pull request events but only for the master branch</span><span class="w">
+</span><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">master]</span><span class="w">
+</span><span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">master]</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="c"># Allows you to run this workflow manually from the Actions tab</span><span class="w">
+</span><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="c"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span><span class="w">
+</span><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="c"># This workflow contains a single job called &#34;build&#34;</span><span class="w">
+</span><span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="c"># The type of runner that the job will run on</span><span class="w">
+</span><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="c"># Steps represent a sequence of tasks that will be executed as part of the job</span><span class="w">
+</span><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="c"># Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">submodules</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Fetch Hugo themes (true OR recursive)</span><span class="w">
+</span><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="c"># Fetch all history for .GitInfo and .Lastmod</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Hugo setup</span><span class="w">
+</span><span class="w">        </span><span class="c"># You may pin to the exact commit or the version.</span><span class="w">
+</span><span class="w">        </span><span class="c"># uses: peaceiris/actions-hugo@2e89aa66d0093e4cd14751b3028fc1a179452c2e</span><span class="w">
+</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v2.4.13</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="c"># The Hugo version to download (if necessary) and use. Example: 0.58.2</span><span class="w">
+</span><span class="w">          </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="l">latest</span><span class="w"> </span><span class="c"># optional, default is latest</span><span class="w">
+</span><span class="w">          </span><span class="c"># Download (if necessary) and use Hugo extended version. Example: true</span><span class="w">
+</span><span class="w">          </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># optional, default is false</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Build</span><span class="w">
+</span><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">hugo</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Pushes to another repository</span><span class="w">
+</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">cpina/github-action-push-to-another-repository@master</span><span class="w">
+</span><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">API_TOKEN_GITHUB</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.API_TOKEN_GITHUB }}</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">source-directory</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;public&#34;</span><span class="w">
+</span><span class="w">          </span><span class="nt">destination-github-username</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;这里输入你的Github用户名&#34;</span><span class="w">
+</span><span class="w">          </span><span class="nt">destination-repository-name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;这里输入你的Github用户名.github.io&#34;</span><span class="w">
+</span><span class="w">          </span><span class="nt">user-email</span><span class="p">:</span><span class="w"> </span><span class="l">这里输入你的Github邮箱</span><span class="w">
+</span></code></pre></div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>需要自定义的部分<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">注意<code>on</code>里的 branch 是否和自己的相同，因为现在 Github 默认分支为 main。
+同时最后三行内容需要自行替换。</div>
+        </div>
+    </div>
+<p>脚本主要做了以下事情：</p>
+<ol>
+<li>创建一个 Hugo 环境</li>
+<li>使用 hugo 命令编译代码，产生 public 文件夹</li>
+<li>将 public 文件 push 到<code>你的Github用户名.github.io</code>仓库。（也就是你之前创建的第二个仓库）</li>
+</ol>
+<h3 id="设置-push-用的密钥">设置 Push 用的密钥</h3>
+<p>为了让 Github Action 脚本有权限将代码 Push 到我们的<code>xx.github.io</code>仓库，我们需要申请一个密钥并告诉它。在 Github 设置中找到<code>Developer settings/Personal access tokens</code>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png" data-sub-html="<h2>个人密钥设置界面</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202030.png" />
+    </a><figcaption class="image-caption">个人密钥设置界面</figcaption>
+    </figure></p>
+<p>新建一个密钥，权限设置把<code>Repo</code>打勾。
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png" data-sub-html="<h2>新建密钥</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202144.png" />
+    </a><figcaption class="image-caption">新建密钥</figcaption>
+    </figure></p>
+<p>回到第一个仓库的设置里，选择<code>Secrets（密钥）</code>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png" data-sub-html="<h2>仓库密钥设置</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202401.png" />
+    </a><figcaption class="image-caption">仓库密钥设置</figcaption>
+    </figure></p>
+<p>新建密钥，将刚才生成的个人密钥填进去，名字设为<code>API_TOKEN_GITHUB</code>(跟 CI 脚本里的名称对应即可)
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png" data-sub-html="<h2>新建仓库密钥</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210511202520.png" />
+    </a><figcaption class="image-caption">新建仓库密钥</figcaption>
+    </figure></p>
+<h3 id="观察效果">观察效果</h3>
+<p>在 Push 新修改到第一个仓库后，在<code>Action</code>界面可以看到新的<code>workflow</code>开始运行了。
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png" data-sub-html="<h2>第一个仓库workflow界面（图中已经完成）</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205433.png" />
+    </a><figcaption class="image-caption">第一个仓库<code>workflow</code>界面（图中已经完成）</figcaption>
+    </figure></p>
+<p>在<code>workflow</code>结束后，可以在第二个仓库看到新的<code>Push</code>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png" data-sub-html="<h2>第二个仓库自动push了新的静态页面</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210513205803.png" />
+    </a><figcaption class="image-caption">第二个仓库自动<code>push</code>了新的静态页面</figcaption>
+    </figure></p>
+<p>在等待 1-2 分钟后，即可在<code>xx.github.io</code>观察到变化。</p>
+<h2 id="配置评论系统">配置评论系统</h2>
+<h3 id="gittalk">GitTalk</h3>
+<p><code>GitTalk</code>是基于 github 的 repo issues 作为数据库来存储评论的。
+<code>Love-It</code>主题集成了<code>GitTalk</code> ，需要使用的话只需要在<code>config.toml</code>里填写指定信息就可以了。</p>
+<p>首先要去<code>Github -&gt; Settings -&gt; Developer Settings -&gt; OAuth App</code> 里注册一个新的 OAuth App 来给 Gitalk 使用。
+两个 Url 填自己博客的地址就行。</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png" data-sub-html="<h2>注册OAuth App</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png" />
+    </a><figcaption class="image-caption">注册OAuth App</figcaption>
+    </figure>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">      <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">comment</span><span class="p">.</span><span class="nx">gitalk</span><span class="p">]</span>
+        <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="nx">owner</span> <span class="p">=</span> <span class="s2">&#34;JellyZhang&#34;</span>  <span class="err">&lt;--</span> <span class="nx">Github用户名</span>
+        <span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;blog-comment&#34;</span> <span class="err">&lt;--</span> <span class="nx">用来存放评论的repo名称</span>
+        <span class="nx">clientId</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>  <span class="err">&lt;--</span> <span class="nx">申请好的OAuth的ClientId</span>
+        <span class="nx">clientSecret</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span> <span class="err">&lt;--</span> <span class="nx">申请好的OAuth的ClientSecret</span>
+</code></pre></div><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>升级Gitalk来防止403问题<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Gitalk 1.6 版本存在一个自身 Bug，它里面用到了一个链接来依赖某个下游，而事实上这个链接是 demo 演示用的，已经因为滥用被取消了，所以需要</div>
+        </div>
+    </div>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>在本地环境看不到生效？<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">评论系统在本地运行时不生效，需要 publish 后查看效果。</div>
+        </div>
+    </div>
+<h2 id="参考文献">参考文献</h2>
+<ol>
+<li><a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer">LoveIt 官方文档</a></li>
+<li><a href="https://gohugo.io/content-management/" target="_blank" rel="noopener noreffer">Hugo 官方文档</a></li>
+<li><a href="https://www.download3k.com/articles/How-to-force-Chrome-refresh-regenerate-thumbnails-for-its-New-Tab-page-tiles-02115" target="_blank" rel="noopener noreffer">刷新 Chrome 缓存</a></li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-04-16</span>
+            </div>
+            <div class="post-info-license"><span><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title="使用Hugo&#43;LoveIt主题搭建博客" data-hashtags="博客,hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-hashtag="博客"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title="使用Hugo&#43;LoveIt主题搭建博客"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://jellyzhang.github.io/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-title="使用Hugo&#43;LoveIt主题搭建博客" data-image="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a>,&nbsp;<a href="/tags/hugo/">hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91-typora-%E5%9B%BE%E5%BA%8A/" class="prev" rel="prev" title="效率开发工具（1）"><i class="fas fa-angle-left fa-fw"></i>效率开发工具（1）</a></div>
+</div>
+<div id="comments"><div id="gitalk" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Made with Sugar, Spice, and Everything nice <br/></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Jelly</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"maxShownLines":24},"comment":{"gitalk":{"admin":["JellyZhang"],"clientID":"0b4ffaaeb1d715868b1a","clientSecret":"f1af89508ba70488f78d5e01b3ca7c850a49b324","id":"2021-04-16T00:39:04+08:00","owner":"JellyZhang","repo":"blog-comment","title":"使用Hugo+LoveIt主题搭建博客"}},"search":{"algoliaAppID":"EFWNLWTRYA","algoliaIndex":"blog","algoliaSearchKey":"e1053ee4f966059a096a66f4e87b165d","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

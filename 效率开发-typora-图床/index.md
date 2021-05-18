@@ -1,7 +1,217 @@
-# 
+# 效率开发工具（1）
+
+
+# 效率开发工具
+
+
+
+
+
+### hammerSpoon (macos)
+
+​	[hammerSpoon](https://www.hammerspoon.org/) 是Macos下的一款开源的可编程脚本软件，支持以API的形式让用户来编写可操作系统的脚本。用一张图来概括：
+
+{{}}
+graph LR
+	begin[你可以] --> A
+	begin --> B
+	begin --> C
+	begin --> D
+	begin --> E
+	A["监听键盘指令(快捷键)"] --> mid[然后你可以...]
+	B[监听鼠标/触控板指令] --> mid
+	C["监听系统设备状态的变更(USB的插入、Wifi的连接)"] --> mid
+	D[设定定时器] --> mid
+	E[......] --> mid
+	mid --> a[打开一个应用]
+	mid --> b[通过网络查询当天天气情况]
+	mid --> c["修改系统设置(音量等)"]
+	mid --> d["调整应用的窗口大小、布局"]
+	mid --> e[通过AppleScript来执行应用自带脚本]
+	mid --> f[......]
+	
 
 ```
-https://zhuanlan.zhihu.com/p/102594554
-```
 
-![image-20210420112208060](https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210420112208060.png)
+图片中未列出的其他操作，包括但不限于：
+
+- 以屏幕为画布来画图
+- 弹出对话框让用户选择选项
+- 搭建一个简易Http服务器
+- 让你的音乐软件（Spotify、Vox）等暂停、下一曲。
+- 展现一个网页内容
+- ……
+
+总而言之，
+
+
+
+- 基于lua脚本语言。https://learnxinyminutes.com/docs/lua/
+
+- fast app switch
+
+  ![image-20210507212356276](https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png)
+
+  ALT + 单个键组合快速切换APP
+
+  my config：
+
+  ![image-20201216233133535](https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg)
+
+- 设备管理（监听、触发）
+
+  - 音频设备
+  - 键盘、鼠标（map keys like vim in non-vim env）
+  - USB
+
+- 系统设备监听
+
+  - wifi event、usb event、audio device event
+
+- 窗口管理
+
+- app自带的Application Script
+
+- 其他API
+
+  - network、timer、httpserver、dialog……
+
+- 可编写自己的状态栏应用
+
+  - ![image-20201216204657010](https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg)
+
+    - 通过系统api获取定位
+    - 通过免费的天气预报来获取天气信息
+    - 通过alertAPI来用气泡提醒
+    - more actions……
+
+  - 剪贴板历史
+
+    ![image-20201216205000122](https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg)
+
+- its ability is only limited by your imagination
+
+- some ideas
+
+  - 在插入usb鼠标时，更改系统的滚轮策略
+  - 连接、断开wifi时播出指定的音乐
+  - 定时将workspace里的git项目都commit、push来存档
+  - 一键输出当前时间戳
+  - 。。。
+- some links
+
+  - https://www.v2ex.com/t/553241
+  - https://sspai.com/post/53992
+  - https://zhuanlan.zhihu.com/p/72499152
+
+### vim
+
+- use [neovim](https://github.com/neovim/neovim) in 2020  (neovim 可视为vim的超集、modern vim)
+
+- vim vs IDE
+
+  - pros：
+    - fast typing、 words edit
+    - 支持自定义脚本
+    - 轻量级，可在服务器运行
+    - 得益于微软lsp（ *Language Server Protocol*）的推行，vim的编程提示方面可以做到与IDE一样的体验
+    - 基本上你需要的IDE功能，都有人实现过相应的vim插件
+  - cons：
+    - 调试debug不太方便，最好依赖本地ide的远程调试功能
+    - 复制不太利索
+
+- 建议的vim mapping
+
+  - ijkl instead of hjkl
+  - 配套的hammerSpoon设置
+
+- vim in chrome
+
+  - extension： vimium
+  - pros：
+    - 可满足简单的无鼠标浏览网页
+    - 支持修改mapping
+  - cons:
+    - 复杂的网页操作仍然需要鼠标、没有鼠标快
+
+- vim in IDE
+
+  - pros：能work及简单的mapping
+
+  - cons：不支持自定义的插件
+
+- vim in everything
+
+  - 大部分commandLine tool，若里面有涉及到“选择”、“光标移动”等，都是hjkl的默认配置。(tmux等)
+  - 习惯vim后会想把快捷键思维代入其他软件
+
+- some links
+
+  - 推荐入门视频：https://www.bilibili.com/video/BV164411P7tw
+
+### 效率之谈
+
+- shortcut key  > mouse
+
+- leftside keyboard > rightside keyboard
+
+- ![image-20201216210914287](https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg)
+
+- 尽可能地将双手保持在左侧区域。
+
+- 右手切换到鼠标、方向键再切换回来耗时巨大。
+
+- apprroachs
+
+  - vim
+
+  - hammerSpoon map keys like vim （alt + ijkl)
+
+    ![Testimonial for ergoemacs-mode](https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg)
+
+
+
+### typora + 免费图床
+
+- pros：
+  - 所见即所得，即时渲染的markdown
+  - 免费图床：摆脱markdown自身不保存资源的劣势
+
+### docker container as dev-env
+
+- 防止本身的环境装太多软件，太乱。
+- 使用Dockerfile来搭建一个符合你要求的开发环境
+- 使用docker的volumn功能来将本地的项目文件映射到容器的workspace中
+
+
+
+### commandLine tools
+
+- fzf：模糊查找
+
+  ![img](https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg)
+
+- ranger：命令行中的文件资源管理器
+
+  ![multiple panes](https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg)
+
+- tmux：终端会话工具
+
+### 坚果云
+
+- 作为备份云盘
+- pros：
+  - 国内环境下网速较好
+  - 支持全平台app
+  - 支持版本回滚
+  - 免费版个人使用足够
+
+
+
+
+
+
+
+
+
+
