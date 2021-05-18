@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jellyzhang.github.io\/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/"
-        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客, hugo","wordcount":  3914 ,
+        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客, hugo","wordcount":  5205 ,
         "url": "https:\/\/jellyzhang.github.io\/%E4%BD%BF%E7%94%A8hugo-loveit%E4%B8%BB%E9%A2%98%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2021-04-16T00:39:04+08:00","dateModified": "2021-04-16T00:39:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "jelly","logo": "https:\/\/jellyzhang.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">使用Hugo&#43;LoveIt主题搭建博客</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Jelly</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tech/"><i class="far fa-folder fa-fw"></i>tech</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3914 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5205 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -168,6 +168,8 @@
         <li><a href="#gittalk">GitTalk</a></li>
       </ul>
     </li>
+    <li><a href="#配置搜索系统">配置搜索系统</a></li>
+    <li><a href="#配置-google-analytics-网站分析">配置 Google Analytics 网站分析</a></li>
     <li><a href="#参考文献">参考文献</a></li>
   </ul>
 </nav></div>
@@ -745,7 +747,15 @@ git push -u origin master
             alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png" />
     </a><figcaption class="image-caption">注册OAuth App</figcaption>
     </figure>
-<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">      <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">comment</span><span class="p">.</span><span class="nx">gitalk</span><span class="p">]</span>
+<p>修改<code>config.toml</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">
+    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">comment</span><span class="p">]</span>
+      <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>  <span class="err">&lt;--</span> <span class="nx">启用评论系统</span>
+
+      <span class="p">...</span>
+
+
+      <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">comment</span><span class="p">.</span><span class="nx">gitalk</span><span class="p">]</span>
         <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
         <span class="nx">owner</span> <span class="p">=</span> <span class="s2">&#34;JellyZhang&#34;</span>  <span class="err">&lt;--</span> <span class="nx">Github用户名</span>
         <span class="nx">repo</span> <span class="p">=</span> <span class="s2">&#34;blog-comment&#34;</span> <span class="err">&lt;--</span> <span class="nx">用来存放评论的repo名称</span>
@@ -756,7 +766,19 @@ git push -u origin master
             <i class="icon fas fa-pencil-alt fa-fw"></i>升级Gitalk来防止403问题<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">Gitalk 1.6 版本存在一个自身 Bug，它里面用到了一个链接来依赖某个下游，而事实上这个链接是 demo 演示用的，已经因为滥用被取消了，所以需要</div>
+            <div class="admonition-content"><p><code>Gitalk 1.6.2版本</code> 存在一个自身 Bug，它里面用到了一个链接来依赖某个下游，而事实上这个链接是 demo 演示用的，已经因为滥用被取消了，所以需要将 LoveIt 主题使用的 1.6.2 版本改成<strong>1.7.2</strong></p>
+<p>修改<code>./themes/LoveIt/assets/data/cdn/jsdelivr.yml</code>中的<code>Gitalk</code>的链接：</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">  </span><span class="nt">metingJS</span><span class="p">:</span><span class="w"> </span><span class="l">meting@2.0.1/dist/Meting.min.js</span><span class="w">
+</span><span class="w">  </span><span class="c"># gitalk@1.6.2 https://github.com/gitalk/gitalk</span><span class="w">
+</span><span class="w">  </span><span class="nt">gitalkCSS</span><span class="p">:</span><span class="w"> </span><span class="l">gitalk@1.7.2/dist/gitalk.min.css     &lt;-- 改为1.7.2</span><span class="w">
+</span><span class="w">  </span><span class="nt">gitalkJS</span><span class="p">:</span><span class="w"> </span><span class="l">gitalk@1.7.2/dist/gitalk.min.js    &lt;-- 改为1.7.2</span><span class="w">
+</span><span class="w">  </span><span class="c"># valine@1.4.14 https://valine.js.org/</span><span class="w">
+</span><span class="w">  </span><span class="nt">valineJS</span><span class="p">:</span><span class="w"> </span><span class="l">valine@1.4.14/dist/Valine.min.js</span><span class="w">
+</span><span class="w">  </span><span class="l">...</span><span class="w">
+</span><span class="w">
+</span></code></pre></div></div>
         </div>
     </div>
 <div class="details admonition question open">
@@ -767,6 +789,152 @@ git push -u origin master
             <div class="admonition-content">评论系统在本地运行时不生效，需要 publish 后查看效果。</div>
         </div>
     </div>
+<h2 id="配置搜索系统">配置搜索系统</h2>
+<p><code>LoveIt</code>集成了两种搜索引擎，<a href="https://lunrjs.com/" target="_blank" rel="noopener noreffer">Lunr</a>和<a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer">algolia</a>。</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>两种搜索引擎的区别<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>参考<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/#51-%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener noreffer">LoveIt 官方文档</a></p>
+<ul>
+<li>lunr: 简单, 无需同步 index.json, 没有 contentLength 的限制, 但占用带宽大且性能低 (特别是中文需要一个较大的分词依赖库)</li>
+<li>algolia: 高性能并且占用带宽低, 但需要同步 index.json 且有 contentLength 的限制</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p>我这里记录<code>algolia</code>的配置方法。
+首先需要在配置文件中新增<code>Outputs</code>的<code>JSON</code>类型，用于产生<code>index.json</code>文件来提供给搜索引擎。</p>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">
+<span class="nx">config</span><span class="p">.</span><span class="nx">toml</span><span class="err">:</span>
+
+<span class="p">[</span><span class="nx">outputs</span><span class="p">]</span>
+  <span class="nx">home</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">,</span> <span class="s2">&#34;RSS&#34;</span><span class="p">,</span> <span class="s2">&#34;JSON&#34;</span><span class="p">]</span>
+
+</code></pre></div><p>设置后，在使用<code>hugo</code>命令编译后应该可以在<code>public</code>文件夹下找到<code>index.json</code></p>
+<p>之后在<code>algolia</code>注册账号并创建一个<code>application</code>与<code>index</code>:</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png" data-sub-html="<h2>创建application, freePlan一般够用</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png" />
+    </a><figcaption class="image-caption">创建application, freePlan一般够用</figcaption>
+    </figure>
+<p>然后在<code>API Keys</code>里找到<code>appID</code>和<code>searchKey</code>:
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png" data-sub-html="<h2>在API Keys里找到appId与searchKey</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png" />
+    </a><figcaption class="image-caption">在API Keys里找到appId与searchKey</figcaption>
+    </figure></p>
+<div class="highlight"><pre class="chroma"><code class="language-toml" data-lang="toml">
+<span class="nx">config</span><span class="p">.</span><span class="nx">toml</span><span class="err">:</span>
+
+      <span class="p">[</span><span class="nx">languages</span><span class="p">.</span><span class="nx">zh</span><span class="err">-</span><span class="nx">cn</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">search</span><span class="p">]</span>
+        <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="c"># 搜索引擎的类型 (&#34;lunr&#34;, &#34;algolia&#34;)</span>
+        <span class="nx">type</span> <span class="p">=</span> <span class="s2">&#34;algolia&#34;</span>
+        <span class="c"># 文章内容最长索引长度</span>
+        <span class="nx">contentLength</span> <span class="p">=</span> <span class="mi">4000</span>
+        <span class="c"># 搜索框的占位提示语</span>
+        <span class="nx">placeholder</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+        <span class="c"># 最大结果数目</span>
+        <span class="nx">maxResultLength</span> <span class="p">=</span> <span class="mi">10</span>
+        <span class="c"># 结果内容片段长度</span>
+        <span class="nx">snippetLength</span> <span class="p">=</span> <span class="mi">50</span>
+        <span class="c"># 搜索结果中高亮部分的 HTML 标签</span>
+        <span class="nx">highlightTag</span> <span class="p">=</span> <span class="s2">&#34;em&#34;</span>
+        <span class="c"># 是否在搜索索引中使用基于 baseURL 的绝对路径</span>
+        <span class="nx">absoluteURL</span> <span class="p">=</span> <span class="kc">false</span>
+        <span class="p">[</span><span class="nx">languages</span><span class="p">.</span><span class="nx">zh</span><span class="err">-</span><span class="nx">cn</span><span class="p">.</span><span class="nx">params</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">algolia</span><span class="p">]</span>
+          <span class="nx">index</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>  <span class="err">&lt;---</span>  <span class="nx">你创建的index的名字</span>
+          <span class="nx">appID</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>    <span class="err">&lt;---</span> <span class="nx">Application</span> <span class="nx">ID</span>
+          <span class="nx">searchKey</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>  <span class="err">&lt;---</span> <span class="nx">Search</span><span class="err">-</span><span class="nx">Only</span> <span class="nx">API</span> <span class="nx">Key</span>
+
+</code></pre></div><p>然后可以上传生成的<code>index.json</code>到 algolia 来生成索引，实现搜索功能。</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png" data-sub-html="<h2>手动上传index.json的方法</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png" />
+    </a><figcaption class="image-caption">手动上传index.json的方法</figcaption>
+    </figure>
+<p>当然，每次生成完上传<code>index.json</code>未免太过麻烦，况且我们还是用<code>Github Action</code>来自动编译的，因此接下来我们让<code>Github Action</code>来帮我们上传<code>index.json</code>到<code>algolia</code>。</p>
+<p>首先生成一个 <code>Admin API Key</code> 用于调用 API 来上传 index.json:</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png" data-sub-html="<h2>生成Admin API Key</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png" />
+    </a><figcaption class="image-caption">生成Admin API Key</figcaption>
+    </figure>
+<p>然后修改我们的<code>Github Action</code>的脚本：</p>
+<div class="highlight"><pre class="chroma"><code class="language-yml" data-lang="yml"><span class="w">
+</span><span class="w"></span><span class="l">在`main.yml`末尾加上：</span><span class="w">
+</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Algolia Index Uploader</span><span class="w">
+</span><span class="w">        </span><span class="c"># You may pin to the exact commit or the version.</span><span class="w">
+</span><span class="w">        </span><span class="c"># uses: rxrw/algolia-index-uploader@294d1d600c4a2197a64903b6161cc80acea1becb</span><span class="w">
+</span><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">rxrw/algolia-index-uploader@v1</span><span class="w">
+</span><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="c"># Your Algolia IndexPath</span><span class="w">
+</span><span class="w">          </span><span class="nt">index_path</span><span class="p">:</span><span class="w"> </span><span class="l">public/index.json   &lt;-- 生成的index.json位置，默认即可</span><span class="w">
+</span><span class="w">          </span><span class="c"># Algolia Index Id</span><span class="w">
+</span><span class="w">          </span><span class="nt">algolia_index_id</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXXXXXX  &lt;-- 你的indexId, 即之前获得的`application ID`</span><span class="w">
+</span><span class="w">          </span><span class="c"># Algolia Index Name</span><span class="w">
+</span><span class="w">          </span><span class="nt">algolia_index_name</span><span class="p">:</span><span class="w"> </span><span class="l">XXXX  &lt;--- 你创建的index名字</span><span class="w">
+</span><span class="w">          </span><span class="c"># Algolia Admin Key</span><span class="w">
+</span><span class="w">          </span><span class="nt">algolia_index_admin_key</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXXXXXXXXX  &lt;--- 上图中获取的admin Key</span><span class="w">
+</span><span class="w">
+</span></code></pre></div><p>之后运行脚本即可在<code>algolia</code>在 dashboard 里看到新增的记录。</p>
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png" data-sub-html="<h2>algolia新增了record</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png" />
+    </a><figcaption class="image-caption">algolia新增了record</figcaption>
+    </figure>
+<h2 id="配置-google-analytics-网站分析">配置 Google Analytics 网站分析</h2>
+<p><code>Google analytics</code>是将用户的动作行为收集后发送到 Google，交由 Google 进行统计与分析，形成看板。</p>
+<p>在<a href="https://analytics.google.com/" target="_blank" rel="noopener noreffer">Google analytics</a>创建媒体资源 &ndash;&gt; 添加数据流 &ndash;&gt; 网站，之后在数据流详情里获取到<code>衡量ID</code>:
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png" data-sub-html="<h2>获取衡量ID</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png" />
+    </a><figcaption class="image-caption">获取衡量ID</figcaption>
+    </figure></p>
+<p>之后可以在<code>Dashboard</code>里查看网站的用户行为，有很多内容可以慢慢探索。
+<figure><a class="lightgallery" href="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png" title="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png" data-thumbnail="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png" data-sub-html="<h2>Google analytics Dashboard</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png"
+            data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png 2x"
+            data-sizes="auto"
+            alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png" />
+    </a><figcaption class="image-caption">Google analytics Dashboard</figcaption>
+    </figure></p>
 <h2 id="参考文献">参考文献</h2>
 <ol>
 <li><a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer">LoveIt 官方文档</a></li>
@@ -814,5 +982,5 @@ git push -u origin master
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"maxShownLines":24},"comment":{"gitalk":{"admin":["JellyZhang"],"clientID":"0b4ffaaeb1d715868b1a","clientSecret":"f1af89508ba70488f78d5e01b3ca7c850a49b324","id":"2021-04-16T00:39:04+08:00","owner":"JellyZhang","repo":"blog-comment","title":"使用Hugo+LoveIt主题搭建博客"}},"search":{"algoliaAppID":"EFWNLWTRYA","algoliaIndex":"blog","algoliaSearchKey":"e1053ee4f966059a096a66f4e87b165d","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"maxShownLines":24},"comment":{"gitalk":{"admin":["JellyZhang"],"clientID":"0b4ffaaeb1d715868b1a","clientSecret":"f1af89508ba70488f78d5e01b3ca7c850a49b324","id":"2021-04-16T00:39:04+08:00","owner":"JellyZhang","repo":"blog-comment","title":"使用Hugo+LoveIt主题搭建博客"}},"search":{"algoliaAppID":"EFWNLWTRYA","algoliaIndex":"blog","algoliaSearchKey":"e1053ee4f966059a096a66f4e87b165d","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

@@ -463,7 +463,16 @@ jobs:
 
 {{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210517115336.png" caption="注册OAuth App" >}}
 
+修改`config.toml`:
+
 ```toml
+
+    [params.page.comment]
+      enable = true  <-- 启用评论系统
+
+      ...
+
+
       [params.page.comment.gitalk]
         enable = true
         owner = "JellyZhang"  <-- Github用户名
@@ -474,12 +483,135 @@ jobs:
 
 {{< admonition title="升级Gitalk来防止403问题" open=true >}}
 
-Gitalk 1.6 版本存在一个自身 Bug，它里面用到了一个链接来依赖某个下游，而事实上这个链接是 demo 演示用的，已经因为滥用被取消了，所以需要
+`Gitalk 1.6.2版本` 存在一个自身 Bug，它里面用到了一个链接来依赖某个下游，而事实上这个链接是 demo 演示用的，已经因为滥用被取消了，所以需要将 LoveIt 主题使用的 1.6.2 版本改成**1.7.2**
+
+修改`./themes/LoveIt/assets/data/cdn/jsdelivr.yml`中的`Gitalk`的链接：
+
+```yml
+
+  ...
+  metingJS: meting@2.0.1/dist/Meting.min.js
+  # gitalk@1.6.2 https://github.com/gitalk/gitalk
+  gitalkCSS: gitalk@1.7.2/dist/gitalk.min.css     <-- 改为1.7.2
+  gitalkJS: gitalk@1.7.2/dist/gitalk.min.js    <-- 改为1.7.2
+  # valine@1.4.14 https://valine.js.org/
+  valineJS: valine@1.4.14/dist/Valine.min.js
+  ...
+
+```
+
 {{< /admonition >}}
 
 {{< admonition title="在本地环境看不到生效？" open=true type="question" >}}
 评论系统在本地运行时不生效，需要 publish 后查看效果。
 {{< /admonition >}}
+
+## 配置搜索系统
+
+`LoveIt`集成了两种搜索引擎，[Lunr](https://lunrjs.com/)和[algolia](https://www.algolia.com/)。
+
+{{< admonition title="两种搜索引擎的区别" open=true type="info" >}}
+
+参考[LoveIt 官方文档](https://hugoloveit.com/zh-cn/theme-documentation-basics/#51-%E8%BE%93%E5%87%BA%E9%85%8D%E7%BD%AE)
+
+- lunr: 简单, 无需同步 index.json, 没有 contentLength 的限制, 但占用带宽大且性能低 (特别是中文需要一个较大的分词依赖库)
+- algolia: 高性能并且占用带宽低, 但需要同步 index.json 且有 contentLength 的限制
+
+{{< /admonition >}}
+
+我这里记录`algolia`的配置方法。
+首先需要在配置文件中新增`Outputs`的`JSON`类型，用于产生`index.json`文件来提供给搜索引擎。
+
+```toml
+
+config.toml:
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+```
+
+设置后，在使用`hugo`命令编译后应该可以在`public`文件夹下找到`index.json`
+
+之后在`algolia`注册账号并创建一个`application`与`index`:
+
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519005955.png" caption="创建application, freePlan一般够用" >}}
+
+然后在`API Keys`里找到`appID`和`searchKey`:
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010939.png" caption="在API Keys里找到appId与searchKey" >}}
+
+```toml
+
+config.toml:
+
+      [languages.zh-cn.params.search]
+        enable = true
+        # 搜索引擎的类型 ("lunr", "algolia")
+        type = "algolia"
+        # 文章内容最长索引长度
+        contentLength = 4000
+        # 搜索框的占位提示语
+        placeholder = ""
+        # 最大结果数目
+        maxResultLength = 10
+        # 结果内容片段长度
+        snippetLength = 50
+        # 搜索结果中高亮部分的 HTML 标签
+        highlightTag = "em"
+        # 是否在搜索索引中使用基于 baseURL 的绝对路径
+        absoluteURL = false
+        [languages.zh-cn.params.search.algolia]
+          index = ""  <---  你创建的index的名字
+          appID = ""    <--- Application ID
+          searchKey = ""  <--- Search-Only API Key
+
+```
+
+然后可以上传生成的`index.json`到 algolia 来生成索引，实现搜索功能。
+
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519010743.png" caption="手动上传index.json的方法" >}}
+
+当然，每次生成完上传`index.json`未免太过麻烦，况且我们还是用`Github Action`来自动编译的，因此接下来我们让`Github Action`来帮我们上传`index.json`到`algolia`。
+
+首先生成一个 `Admin API Key` 用于调用 API 来上传 index.json:
+
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519011428.png" caption="生成Admin API Key" >}}
+
+然后修改我们的`Github Action`的脚本：
+
+```yml
+
+在`main.yml`末尾加上：
+
+      - name: Algolia Index Uploader
+        # You may pin to the exact commit or the version.
+        # uses: rxrw/algolia-index-uploader@294d1d600c4a2197a64903b6161cc80acea1becb
+        uses: rxrw/algolia-index-uploader@v1
+        with:
+          # Your Algolia IndexPath
+          index_path: public/index.json   <-- 生成的index.json位置，默认即可
+          # Algolia Index Id
+          algolia_index_id: XXXXXXXXX  <-- 你的indexId, 即之前获得的`application ID`
+          # Algolia Index Name
+          algolia_index_name: XXXX  <--- 你创建的index名字
+          # Algolia Admin Key
+          algolia_index_admin_key: XXXXXXXXXXXX  <--- 上图中获取的admin Key
+
+```
+
+之后运行脚本即可在`algolia`在 dashboard 里看到新增的记录。
+
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png" caption="algolia新增了record" >}}
+
+## 配置 Google Analytics 网站分析
+
+`Google analytics`是将用户的动作行为收集后发送到 Google，交由 Google 进行统计与分析，形成看板。
+
+在[Google analytics](https://analytics.google.com/)创建媒体资源 --> 添加数据流 --> 网站，之后在数据流详情里获取到`衡量ID`:
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013745.png" caption="获取衡量ID" >}}
+
+之后可以在`Dashboard`里查看网站的用户行为，有很多内容可以慢慢探索。
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png" caption="Google analytics Dashboard" >}}
 
 ## 参考文献
 
