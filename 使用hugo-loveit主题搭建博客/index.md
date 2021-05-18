@@ -603,6 +603,12 @@ config.toml:
 
 {{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519012106.png" caption="algolia新增了record" >}}
 
+{{< admonition title="删除文章后需要删除旧Record" open=true >}}
+每次上传的记录是增量的，意味着不会清除旧的记录。
+
+因此如果删除了发布过的旧文章，需要手动去`algolia`网站上清理相关的 Object。（也可以使用 Clear 功能全部清除）
+{{< /admonition >}}
+
 ## 配置 Google Analytics 网站分析
 
 `Google analytics`是将用户的动作行为收集后发送到 Google，交由 Google 进行统计与分析，形成看板。
