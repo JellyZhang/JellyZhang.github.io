@@ -619,6 +619,20 @@ config.toml:
 之后可以在`Dashboard`里查看网站的用户行为，有很多内容可以慢慢探索。
 {{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210519013830.png" caption="Google analytics Dashboard" >}}
 
+## 配置 Google Search Console
+
+首先确定自己的站点地图有正常生成。打开`/sitemap.xml`链接：
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210520111437.png" caption="sitemap" >}}
+
+之后在`Google Search Console`里填写自己站点地图的链接，可以帮助谷歌爬虫了解网站结构。
+
+{{< image src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/20210520150242.png" caption="上传sitemap" >}}
+
+{{< admonition title="显示`无法获取`?" open=true >}}
+事实上是没有问题的，谷歌可能有点延迟。可以在[bing webmaster tool](https://www.bing.com/webmasters) 导入 Google 的设置，可以看到 bing 是可以立即获取的。
+
+{{< /admonition >}}
+
 ## 参考文献
 
 1. [LoveIt 官方文档](https://hugoloveit.com/zh-cn/)
