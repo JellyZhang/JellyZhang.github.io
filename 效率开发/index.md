@@ -3,13 +3,11 @@
 
 # 效率开发工具
 
-## hammerSpoon (macos)
+## HammerSpoon (macos)
 
-[hammerSpoon](https://www.hammerspoon.org/) 是 Macos 下的一款开源的可编程脚本软件，支持以 API 的形式让用户来编写可操作系统的脚本。用一张图来概括：
+[HammerSpoon](https://www.hammerspoon.org/) 是 Macos 下的一款开源的可编程脚本软件，支持以 API 的形式让用户来编写可操作系统的脚本。用一张图来概括：
 
-{{< figure src="./hammerSpoonUsage.svg" title="hammerSpoon Usgae">}}
-
-![asd](hammerSpoonUsage.svg "asddsa")
+{{< image src="./hammerSpoonUsage.png" caption="hammerSpoon Usage">}}
 
 图片中未列出的其他操作，包括但不限于：
 
