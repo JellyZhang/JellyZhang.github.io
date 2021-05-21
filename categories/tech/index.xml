@@ -14,11 +14,11 @@
                 <img src="https://tva1.sinaimg.cn/large/008eGmZEly1gppfed598nj30zk09y0sx.jpg" referrerpolicy="no-referrer">
             </div>安装 Hugo 可参考Hugo 官方的 Quick Start 安装二进制（Mac） # 使用brew安装hugo brew install hugo # 创建新项目（网站） hugo new site my_website # 生成用于发布的静态文件（不包]]></description>
 </item><item>
-    <title>效率开发工具（1）</title>
+    <title>效率开发工具</title>
     <link>https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/</link>
     <pubDate>Fri, 16 Apr 2021 00:39:04 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/</guid>
-    <description><![CDATA[效率开发工具 hammerSpoon (macos) ​ hammerSpoon 是Macos下的一款开源的可编程脚本软件，支持以API的形式让用户来编写可操作系统的脚本。用一张图来概括： {{}} graph LR begi]]></description>
+    <description><![CDATA[效率开发工具 hammerSpoon (macos) hammerSpoon 是 Macos 下的一款开源的可编程脚本软件，支持以 API 的形式让用户来编写可操作系统的脚本。用一张图来概括： hammerSpoon Usgae 图片中未列出的其他操作，]]></description>
 </item></channel>
 </rss>

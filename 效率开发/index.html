@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>效率开发工具（1） - Jelly&#39;s Blog</title><meta name="Description" content="Jelly&#39;s Blog. Jelly的个人博客"><meta property="og:title" content="效率开发工具（1）" />
-<meta property="og:description" content="效率开发工具 hammerSpoon (macos) ​ hammerSpoon 是Macos下的一款开源的可编程脚本软件，支持以API的形式让用户来编写可操作系统的脚本。用一张图来概括： {{}} graph LR begi" />
+        <title>效率开发工具 - Jelly&#39;s Blog</title><meta name="Description" content="Jelly&#39;s Blog. Jelly的个人博客"><meta property="og:title" content="效率开发工具" />
+<meta property="og:description" content="效率开发工具 hammerSpoon (macos) hammerSpoon 是 Macos 下的一款开源的可编程脚本软件，支持以 API 的形式让用户来编写可操作系统的脚本。用一张图来概括： hammerSpoon Usgae 图片中未列出的其他操作，" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" /><meta property="og:image" content="https://jellyzhang.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-16T00:39:04&#43;08:00" />
@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://jellyzhang.github.io/logo.png"/>
 
-<meta name="twitter:title" content="效率开发工具（1）"/>
-<meta name="twitter:description" content="效率开发工具 hammerSpoon (macos) ​ hammerSpoon 是Macos下的一款开源的可编程脚本软件，支持以API的形式让用户来编写可操作系统的脚本。用一张图来概括： {{}} graph LR begi"/>
+<meta name="twitter:title" content="效率开发工具"/>
+<meta name="twitter:description" content="效率开发工具 hammerSpoon (macos) hammerSpoon 是 Macos 下的一款开源的可编程脚本软件，支持以 API 的形式让用户来编写可操作系统的脚本。用一张图来概括： hammerSpoon Usgae 图片中未列出的其他操作，"/>
 <meta name="application-name" content="Jelly&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="Jelly&#39;s Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "效率开发工具（1）",
+        "headline": "效率开发工具",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jellyzhang.github.io\/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91\/"
-        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "工具, hugo","wordcount":  1616 ,
+        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "工具","wordcount":  1097 ,
         "url": "https:\/\/jellyzhang.github.io\/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91\/","datePublished": "2021-04-16T00:39:04+08:00","dateModified": "2021-04-16T00:39:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "jelly","logo": "https:\/\/jellyzhang.github.io\/images\/avatar.png"},"author": {
@@ -104,10 +104,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">效率开发工具（1）</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">效率开发工具</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Jelly</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tech/"><i class="far fa-folder fa-fw"></i>tech</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1616 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1097 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -115,216 +115,316 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#hammerspoon-macos">hammerSpoon (macos)</a>
       <ul>
-        <li><a href="#hammerspoon-macos">hammerSpoon (macos)</a></li>
+        <li><a href="#vim">vim</a></li>
+        <li><a href="#效率之谈">效率之谈</a></li>
+        <li><a href="#typora--免费图床">typora + 免费图床</a></li>
+        <li><a href="#docker-container-as-dev-env">docker container as dev-env</a></li>
+        <li><a href="#commandline-tools">commandLine tools</a></li>
+        <li><a href="#坚果云">坚果云</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="效率开发工具">效率开发工具</h1>
-<h3 id="hammerspoon-macos">hammerSpoon (macos)</h3>
-<p>​	<a href="https://www.hammerspoon.org/" target="_blank" rel="noopener noreffer">hammerSpoon</a> 是Macos下的一款开源的可编程脚本软件，支持以API的形式让用户来编写可操作系统的脚本。用一张图来概括：</p>
-<p>{{}}
-graph LR
-begin[你可以] &ndash;&gt; A
-begin &ndash;&gt; B
-begin &ndash;&gt; C
-begin &ndash;&gt; D
-begin &ndash;&gt; E
-A[&ldquo;监听键盘指令(快捷键)&quot;] &ndash;&gt; mid[然后你可以&hellip;]
-B[监听鼠标/触控板指令] &ndash;&gt; mid
-C[&ldquo;监听系统设备状态的变更(USB的插入、Wifi的连接)&quot;] &ndash;&gt; mid
-D[设定定时器] &ndash;&gt; mid
-E[&hellip;&hellip;] &ndash;&gt; mid
-mid &ndash;&gt; a[打开一个应用]
-mid &ndash;&gt; b[通过网络查询当天天气情况]
-mid &ndash;&gt; c[&ldquo;修改系统设置(音量等)&quot;]
-mid &ndash;&gt; d[&ldquo;调整应用的窗口大小、布局&rdquo;]
-mid &ndash;&gt; e[通过AppleScript来执行应用自带脚本]
-mid &ndash;&gt; f[&hellip;&hellip;]</p>
+<h2 id="hammerspoon-macos">hammerSpoon (macos)</h2>
+<p><a href="https://www.hammerspoon.org/" target="_blank" rel="noopener noreffer">hammerSpoon</a> 是 Macos 下的一款开源的可编程脚本软件，支持以 API 的形式让用户来编写可操作系统的脚本。用一张图来概括：</p>
+<figure><img src="./hammerSpoonUsage.svg"
+         alt="hammerSpoon Usgae"/><figcaption>
+            <p>hammerSpoon Usgae</p>
+        </figcaption>
+</figure>
+
+<p>图片中未列出的其他操作，包括但不限于：</p>
+<ul>
+<li>以屏幕为画布来画图</li>
+<li>弹出对话框让用户选择选项</li>
+<li>搭建一个简易 Http 服务器</li>
+<li>让你的音乐软件（Spotify、Vox）等暂停、下一曲。</li>
+<li>展现一个网页内容</li>
+<li>……</li>
+</ul>
+<p>总而言之，</p>
+<ul>
+<li>
+<p>基于 lua 脚本语言。https://learnxinyminutes.com/docs/lua/</p>
+</li>
+<li>
+<p>fast app switch</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png"
+        data-srcset="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png 1.5x, https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png"
+        title="image-20210507212356276" /></p>
+<p>ALT + 单个键组合快速切换 APP</p>
+<p>my config：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg"
+        title="image-20201216233133535" /></p>
+</li>
+<li>
+<p>设备管理（监听、触发）</p>
+<ul>
+<li>音频设备</li>
+<li>键盘、鼠标（map keys like vim in non-vim env）</li>
+<li>USB</li>
+</ul>
+</li>
+<li>
+<p>系统设备监听</p>
+<ul>
+<li>wifi event、usb event、audio device event</li>
+</ul>
+</li>
+<li>
+<p>窗口管理</p>
+</li>
+<li>
+<p>app 自带的 Application Script</p>
+</li>
+<li>
+<p>其他 API</p>
+<ul>
+<li>network、timer、httpserver、dialog……</li>
+</ul>
+</li>
+<li>
+<p>可编写自己的状态栏应用</p>
+<ul>
+<li>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg"
+        title="image-20201216204657010" /></p>
+<ul>
+<li>通过系统 api 获取定位</li>
+<li>通过免费的天气预报来获取天气信息</li>
+<li>通过 alertAPI 来用气泡提醒</li>
+<li>more actions……</li>
+</ul>
+</li>
+<li>
+<p>剪贴板历史</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg"
+        title="image-20201216205000122" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p>its ability is only limited by your imagination</p>
+</li>
+<li>
+<p>some ideas</p>
+<ul>
+<li>在插入 usb 鼠标时，更改系统的滚轮策略</li>
+<li>连接、断开 wifi 时播出指定的音乐</li>
+<li>定时将 workspace 里的 git 项目都 commit、push 来存档</li>
+<li>一键输出当前时间戳</li>
+<li>。。。</li>
+</ul>
+</li>
+<li>
+<p>some links</p>
+<ul>
+<li><a href="https://www.v2ex.com/t/553241">https://www.v2ex.com/t/553241</a></li>
+<li><a href="https://sspai.com/post/53992">https://sspai.com/post/53992</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/72499152">https://zhuanlan.zhihu.com/p/72499152</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="vim">vim</h3>
+<ul>
+<li>
+<p>use <a href="https://github.com/neovim/neovim" target="_blank" rel="noopener noreffer">neovim</a> in 2020 (neovim 可视为 vim 的超集、modern vim)</p>
+</li>
+<li>
+<p>vim vs IDE</p>
+<ul>
+<li>pros：
+<ul>
+<li>fast typing、 words edit</li>
+<li>支持自定义脚本</li>
+<li>轻量级，可在服务器运行</li>
+<li>得益于微软 lsp（ <em>Language Server Protocol</em>）的推行，vim 的编程提示方面可以做到与 IDE 一样的体验</li>
+<li>基本上你需要的 IDE 功能，都有人实现过相应的 vim 插件</li>
+</ul>
+</li>
+<li>cons：
+<ul>
+<li>调试 debug 不太方便，最好依赖本地 ide 的远程调试功能</li>
+<li>复制不太利索</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>建议的 vim mapping</p>
+<ul>
+<li>ijkl instead of hjkl</li>
+<li>配套的 hammerSpoon 设置</li>
+</ul>
+</li>
+<li>
+<p>vim in chrome</p>
+<ul>
+<li>extension： vimium</li>
+<li>pros：
+<ul>
+<li>可满足简单的无鼠标浏览网页</li>
+<li>支持修改 mapping</li>
+</ul>
+</li>
+<li>cons:
+<ul>
+<li>复杂的网页操作仍然需要鼠标、没有鼠标快</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>vim in IDE</p>
+<ul>
+<li>
+<p>pros：能 work 及简单的 mapping</p>
+</li>
+<li>
+<p>cons：不支持自定义的插件</p>
+</li>
+</ul>
+</li>
+<li>
+<p>vim in everything</p>
+<ul>
+<li>大部分 commandLine tool，若里面有涉及到“选择”、“光标移动”等，都是 hjkl 的默认配置。(tmux 等)</li>
+<li>习惯 vim 后会想把快捷键思维代入其他软件</li>
+</ul>
+</li>
+<li>
+<p>some links</p>
+<ul>
+<li>推荐入门视频：https://www.bilibili.com/video/BV164411P7tw</li>
+</ul>
+</li>
+</ul>
+<h3 id="效率之谈">效率之谈</h3>
+<ul>
+<li>
+<p>shortcut key &gt; mouse</p>
+</li>
+<li>
+<p>leftside keyboard &gt; rightside keyboard</p>
+</li>
+<li>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg"
+        title="image-20201216210914287" /></p>
+</li>
+<li>
+<p>尽可能地将双手保持在左侧区域。</p>
+</li>
+<li>
+<p>右手切换到鼠标、方向键再切换回来耗时巨大。</p>
+</li>
+<li>
+<p>apprroachs</p>
+<ul>
+<li>
+<p>vim</p>
+</li>
+<li>
+<p>hammerSpoon map keys like vim （alt + ijkl)</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg"
+        title="Testimonial for ergoemacs-mode" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="typora--免费图床">typora + 免费图床</h3>
+<ul>
+<li>pros：
+<ul>
+<li>所见即所得，即时渲染的 markdown</li>
+<li>免费图床：摆脱 markdown 自身不保存资源的劣势</li>
+</ul>
+</li>
+</ul>
+<h3 id="docker-container-as-dev-env">docker container as dev-env</h3>
+<ul>
+<li>防止本身的环境装太多软件，太乱。</li>
+<li>使用 Dockerfile 来搭建一个符合你要求的开发环境</li>
+<li>使用 docker 的 volumn 功能来将本地的项目文件映射到容器的 workspace 中</li>
+</ul>
+<h3 id="commandline-tools">commandLine tools</h3>
+<ul>
+<li>
+<p>fzf：模糊查找</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg"
+        title="img" /></p>
+</li>
+<li>
+<p>ranger：命令行中的文件资源管理器</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg, https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg 1.5x, https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg"
+        title="multiple panes" /></p>
+</li>
+<li>
+<p>tmux：终端会话工具</p>
+</li>
+</ul>
+<h3 id="坚果云">坚果云</h3>
+<ul>
+<li>作为备份云盘</li>
+<li>pros：
+<ul>
+<li>国内环境下网速较好</li>
+<li>支持全平台 app</li>
+<li>支持版本回滚</li>
+<li>免费版个人使用足够</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">
-图片中未列出的其他操作，包括但不限于：
-
-- 以屏幕为画布来画图
-- 弹出对话框让用户选择选项
-- 搭建一个简易Http服务器
-- 让你的音乐软件（Spotify、Vox）等暂停、下一曲。
-- 展现一个网页内容
-- ……
-
-总而言之，
-
-
-
-- 基于lua脚本语言。https://learnxinyminutes.com/docs/lua/
-
-- fast app switch
-
-  ![image-20210507212356276](https://gitee.com/JellyZhang_55ee/blogpic/raw/master/img/image-20210507212356276.png)
-
-  ALT + 单个键组合快速切换APP
-
-  my config：
-
-  ![image-20201216233133535](https://tva1.sinaimg.cn/large/0081Kckwly1glq499c5j3j30hq0acwfv.jpg)
-
-- 设备管理（监听、触发）
-
-  - 音频设备
-  - 键盘、鼠标（map keys like vim in non-vim env）
-  - USB
-
-- 系统设备监听
-
-  - wifi event、usb event、audio device event
-
-- 窗口管理
-
-- app自带的Application Script
-
-- 其他API
-
-  - network、timer、httpserver、dialog……
-
-- 可编写自己的状态栏应用
-
-  - ![image-20201216204657010](https://tva1.sinaimg.cn/large/0081Kckwly1glpzhzda8nj30dk05p40j.jpg)
-
-    - 通过系统api获取定位
-    - 通过免费的天气预报来获取天气信息
-    - 通过alertAPI来用气泡提醒
-    - more actions……
-
-  - 剪贴板历史
-
-    ![image-20201216205000122](https://tva1.sinaimg.cn/large/0081Kckwly1glq28fvz5oj30e407p74w.jpg)
-
-- its ability is only limited by your imagination
-
-- some ideas
-
-  - 在插入usb鼠标时，更改系统的滚轮策略
-  - 连接、断开wifi时播出指定的音乐
-  - 定时将workspace里的git项目都commit、push来存档
-  - 一键输出当前时间戳
-  - 。。。
-- some links
-
-  - https://www.v2ex.com/t/553241
-  - https://sspai.com/post/53992
-  - https://zhuanlan.zhihu.com/p/72499152
-
-### vim
-
-- use [neovim](https://github.com/neovim/neovim) in 2020  (neovim 可视为vim的超集、modern vim)
-
-- vim vs IDE
-
-  - pros：
-    - fast typing、 words edit
-    - 支持自定义脚本
-    - 轻量级，可在服务器运行
-    - 得益于微软lsp（ *Language Server Protocol*）的推行，vim的编程提示方面可以做到与IDE一样的体验
-    - 基本上你需要的IDE功能，都有人实现过相应的vim插件
-  - cons：
-    - 调试debug不太方便，最好依赖本地ide的远程调试功能
-    - 复制不太利索
-
-- 建议的vim mapping
-
-  - ijkl instead of hjkl
-  - 配套的hammerSpoon设置
-
-- vim in chrome
-
-  - extension： vimium
-  - pros：
-    - 可满足简单的无鼠标浏览网页
-    - 支持修改mapping
-  - cons:
-    - 复杂的网页操作仍然需要鼠标、没有鼠标快
-
-- vim in IDE
-
-  - pros：能work及简单的mapping
-
-  - cons：不支持自定义的插件
-
-- vim in everything
-
-  - 大部分commandLine tool，若里面有涉及到“选择”、“光标移动”等，都是hjkl的默认配置。(tmux等)
-  - 习惯vim后会想把快捷键思维代入其他软件
-
-- some links
-
-  - 推荐入门视频：https://www.bilibili.com/video/BV164411P7tw
-
-### 效率之谈
-
-- shortcut key  &gt; mouse
-
-- leftside keyboard &gt; rightside keyboard
-
-- ![image-20201216210914287](https://tva1.sinaimg.cn/large/0081Kckwly1glq054z087j30la07ugsq.jpg)
-
-- 尽可能地将双手保持在左侧区域。
-
-- 右手切换到鼠标、方向键再切换回来耗时巨大。
-
-- apprroachs
-
-  - vim
-
-  - hammerSpoon map keys like vim （alt + ijkl)
-
-    ![Testimonial for ergoemacs-mode](https://tva1.sinaimg.cn/large/0081Kckwly1glq1u3b4qij30e8078wff.jpg)
-
-
-
-### typora + 免费图床
-
-- pros：
-  - 所见即所得，即时渲染的markdown
-  - 免费图床：摆脱markdown自身不保存资源的劣势
-
-### docker container as dev-env
-
-- 防止本身的环境装太多软件，太乱。
-- 使用Dockerfile来搭建一个符合你要求的开发环境
-- 使用docker的volumn功能来将本地的项目文件映射到容器的workspace中
-
-
-
-### commandLine tools
-
-- fzf：模糊查找
-
-  ![img](https://tva1.sinaimg.cn/large/0081Kckwly1glq17x2zc7j31c00u0442.jpg)
-
-- ranger：命令行中的文件资源管理器
-
-  ![multiple panes](https://tva1.sinaimg.cn/large/0081Kckwly1glq1a56bv5j30fn08saiz.jpg)
-
-- tmux：终端会话工具
-
-### 坚果云
-
-- 作为备份云盘
-- pros：
-  - 国内环境下网速较好
-  - 支持全平台app
-  - 支持版本回滚
-  - 免费版个人使用足够
-
-
-
-
-
-
-
-
-
 </code></pre></div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -338,13 +438,13 @@ mid &ndash;&gt; f[&hellip;&hellip;]</p>
                             <a class="link-to-markdown" href="/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-title="效率开发工具（1）" data-hashtags="工具,hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-hashtag="工具"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-title="效率开发工具（1）"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-title="效率开发工具（1）"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-title="效率开发工具" data-hashtags="工具"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-hashtag="工具"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-title="效率开发工具"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://jellyzhang.github.io/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" data-title="效率开发工具"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a>,&nbsp;<a href="/tags/hugo/">hugo</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -367,7 +467,7 @@ mid &ndash;&gt; f[&hellip;&hellip;]</p>
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"maxShownLines":24},"comment":{"gitalk":{"admin":["JellyZhang"],"clientID":"0b4ffaaeb1d715868b1a","clientSecret":"f1af89508ba70488f78d5e01b3ca7c850a49b324","id":"2021-04-16T00:39:04+08:00","owner":"JellyZhang","repo":"blog-comment","title":"效率开发工具（1）"}},"search":{"algoliaAppID":"EFWNLWTRYA","algoliaIndex":"blog","algoliaSearchKey":"e1053ee4f966059a096a66f4e87b165d","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"maxShownLines":24},"comment":{"gitalk":{"admin":["JellyZhang"],"clientID":"0b4ffaaeb1d715868b1a","clientSecret":"f1af89508ba70488f78d5e01b3ca7c850a49b324","id":"2021-04-16T00:39:04+08:00","owner":"JellyZhang","repo":"blog-comment","title":"效率开发工具"}},"search":{"algoliaAppID":"EFWNLWTRYA","algoliaIndex":"blog","algoliaSearchKey":"e1053ee4f966059a096a66f4e87b165d","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'G-SE7CXD3482', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-SE7CXD3482" async></script></body>
