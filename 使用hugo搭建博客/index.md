@@ -639,3 +639,12 @@ config.toml:
 2. [Hugo 官方文档](https://gohugo.io/content-management/)
 3. [刷新 Chrome 缓存](https://www.download3k.com/articles/How-to-force-Chrome-refresh-regenerate-thumbnails-for-its-New-Tab-page-tiles-02115)
 
+plantuml
+{{< plantuml id="eg" >}}
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+{{< /plantuml >}}
+

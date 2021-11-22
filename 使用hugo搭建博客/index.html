@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jellyzhang.github.io\/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/"
-        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客, hugo","wordcount":  5464 ,
+        },"image": ["https:\/\/jellyzhang.github.io\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "博客, hugo","wordcount":  5523 ,
         "url": "https:\/\/jellyzhang.github.io\/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2021-04-16T00:39:04+08:00","dateModified": "2021-04-16T00:39:04+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "jelly","logo": "https:\/\/jellyzhang.github.io\/images\/avatar.png"},"author": {
@@ -106,8 +106,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">使用Hugo&#43;LoveIt主题搭建博客</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Jelly</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tech/"><i class="far fa-folder fa-fw"></i>tech</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5464 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-16">2021-04-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5523 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -983,6 +983,97 @@ git push -u origin master
 <li><a href="https://gohugo.io/content-management/" target="_blank" rel="noopener noreffer">Hugo 官方文档</a></li>
 <li><a href="https://www.download3k.com/articles/How-to-force-Chrome-refresh-regenerate-thumbnails-for-its-New-Tab-page-tiles-02115" target="_blank" rel="noopener noreffer">刷新 Chrome 缓存</a></li>
 </ol>
+<p>plantuml
+<img id="plantuml-eg"/>
+<script src="/js/rawdeflate.js"></script>
+<script>
+  
+
+  function encode64(data) {
+    r = "";
+    for (i=0; i<data.length; i+=3) {
+      if (i+2==data.length) {
+        r +=append3bytes(data.charCodeAt(i), data.charCodeAt(i+1), 0);
+      } else if (i+1==data.length) {
+        r += append3bytes(data.charCodeAt(i), 0, 0);
+      } else {
+        r += append3bytes(data.charCodeAt(i), data.charCodeAt(i+1),
+            data.charCodeAt(i+2));
+      }
+    }
+    return r;
+  }
+
+  function append3bytes(b1, b2, b3) {
+    c1 = b1 >> 2;
+    c2 = ((b1 & 0x3) << 4) | (b2 >> 4);
+    c3 = ((b2 & 0xF) << 2) | (b3 >> 6);
+    c4 = b3 & 0x3F;
+    r = "";
+    r += encode6bit(c1 & 0x3F);
+    r += encode6bit(c2 & 0x3F);
+    r += encode6bit(c3 & 0x3F);
+    r += encode6bit(c4 & 0x3F);
+    return r;
+  }
+
+  function encode6bit(b) {
+    if (b < 10) {
+      return String.fromCharCode(48 + b);
+    }
+    b -= 10;
+    if (b < 26) {
+      return String.fromCharCode(65 + b);
+    }
+    b -= 26;
+    if (b < 26) {
+      return String.fromCharCode(97 + b);
+    }
+    b -= 26;
+    if (b == 0) {
+      return '-';
+    }
+    if (b == 1) {
+      return '_';
+    }
+    return '?';
+  }
+
+  var deflater = window.SharedWorker && new SharedWorker('/js/rawdeflate.js');
+  if (deflater) {
+    deflater.port.addEventListener('message', done_deflating, false);
+    deflater.port.start();
+  } else if (window.Worker) {
+    deflater = new Worker('/js/rawdeflate.js');
+    deflater.onmessage = done_deflating;
+  }
+
+  function done_deflating(e) {
+    const img = document.getElementById("plantuml-eg");
+    img.src = "http://www.plantuml.com/plantuml/img/"+encode64(e.data);
+  }
+
+  function compress(s) {
+    
+    s = unescape(encodeURIComponent(s));
+  
+    if (deflater) {
+      if (deflater.port && deflater.port.postMessage) {
+        deflater.port.postMessage(s);
+      } else {
+        deflater.postMessage(s);
+      }
+    } else {
+      setTimeout(function() {
+          done_deflating({ data: deflate(s) });
+          }, 100);
+    }
+  }
+
+  compress("\nAlice -\u003e Bob: Authentication Request\nBob --\u003e Alice: Authentication Response\n\nAlice -\u003e Bob: Another authentication Request\nAlice \u003c-- Bob: another authentication Response\n")
+</script>
+
+</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -1014,7 +1105,7 @@ git push -u origin master
                 Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Made with Sugar, Spice, and Everything nice <br/></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.86.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Made with Sugar, Spice, and Everything nice <br/></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.89.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Jelly</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
